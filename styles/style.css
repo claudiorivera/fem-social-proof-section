@@ -7,67 +7,95 @@
   --dark-gray-magenta: hsl(303, 10%, 53%);
   --light-gray-magenta: hsl(300, 24%, 96%);
   --white: hsl(0, 0%, 100%);
-  --mobile-width: 375px;
-  --desktop-width: 1440px;
 }
-
+html {
+  box-sizing: border-box;
+}
 body {
   font-family: var(--font-main);
   font-size: 15px;
   font-weight: 400;
   margin: 0;
 }
-
-/* CONTAINER */
-
-/* HEADER */
-
-.header {
-  color: var(--dark-magenta);
+.container {
+  background: url("/images/bg-pattern-top-desktop.svg") left top no-repeat,
+    url("/images/bg-pattern-bottom-desktop.svg") right bottom no-repeat;
 }
 
+/* TOP SECTION */
+.container-top {
+  border: 5px solid red; /* Remove when done */
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 8rem 10rem 2rem;
+}
+
+/* HEADER */
+.header {
+  color: var(--dark-magenta);
+  display: flex;
+  flex-direction: column;
+  flex-basis: 375px;
+  flex-grow: 1;
+  margin-right: 10rem;
+}
+.header-title {
+  font-weight: 700;
+  font-size: 2.75rem;
+  margin: 0 5rem 0.25rem 0;
+}
 .header-text {
   color: var(--dark-gray-magenta);
 }
 
-.header-title {
-  font-weight: 700;
-}
-
 /* STARS */
-
 .stars {
   color: var(--dark-magenta);
+  flex-basis: 375px;
+  flex-grow: 1;
 }
-
 .stars-item {
   background-color: var(--light-gray-magenta);
+  border-radius: 1rem;
+}
+.stars-item-text {
+  display: inline-block;
+  font-weight: 700;
 }
 
-.stars-item-text {
-  font-weight: 700;
+/* BOTTOM SECTION */
+.container-bottom {
+  border: 5px solid blue; /* Remove when done */
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 10rem 5rem;
 }
 
 /* REVIEWS */
 .reviews {
+  display: flex;
+}
+.reviews-item {
+  width: 375px;
   background-color: var(--dark-magenta);
+  border-radius: 1rem;
 }
-
-.reviews-item-text {
-  color: var(--light-gray-magenta);
-}
-.reviews-item-verified {
-  color: var(--light-pink);
+.reviews-item-avatar {
+  border-radius: 50%;
 }
 .reviews-item-name {
   color: var(--white);
   font-weight: 500;
 }
-.reviews-item-avatar {
-  border-radius: 50%;
+.reviews-item-verified {
+  color: var(--light-pink);
 }
-/* FOOTER */
+.reviews-item-text {
+  color: var(--light-gray-magenta);
+}
 
+/* FOOTER */
 .attribution {
   font-size: 11px;
   text-align: center;
